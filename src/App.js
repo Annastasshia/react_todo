@@ -1,12 +1,18 @@
 import React from 'react';
+import Todos from './components/Todos.js'
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>app</h1>
-    </div>
-  );
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>app</h1>
+        <Todos />
+      </div>
+    );
+  }
 }
 
 export default App;
