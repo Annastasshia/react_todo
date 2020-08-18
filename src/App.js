@@ -25,15 +25,27 @@ class App extends React.Component {
     ]
   }
 
+  // Toggle complete: this method controls the checkbox input creates in todoitem.js and has been passed up through the todo.js props 
+  markComplete = (id) => {
+    this.setState({ todos: this.state.todos.map(todo => {
+      if(todo.id === id) {
+        todo.completed = !todo.completed
+      }
+      return todo;
+    })})
+
+    console.log("you have hit the checkbox")
+}
+
   render() {
-    console.log(this.state.todos)
+    
     return (
       <div className="App">
         <h1>app</h1>
         
         {/* Taking the "todos" from their main app component state you can pass it to the 'Todos' component below to access it as a property in the component or a 'prop'*/}
 
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} markComplete={this.markComplete}/>
       </div>
     );
   }

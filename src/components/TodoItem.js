@@ -7,14 +7,23 @@ export class TodoItem extends Component {
                 background: '#f4f4f4',
                 padding: '10px',
                 borderBottom: '1px #ccc dotted',
-                textDecoration: this.props.task.completed ? 'line-through' : 'none'
+                textDecoration: this.props.todo.completed ? 'line-through' : 'none'
                 }
             }
     
+
     render() {
+
+        // destructuring allows you to pull out props (properties) so that you can have an easier nameing conventions in your return.
+        const { id, title} = this.props.todo;
+
         return (
             <div style={this.getStyle()}>
-                <p>{ this.props.task.title }</p>
+                <p>
+                    {/* When you check the box it looks in your properties list in Todos.js for a "markComplete" method */}
+                    <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/> {' '}
+                    { title }
+                </p>
             </div>
             )
         }
@@ -22,7 +31,7 @@ export class TodoItem extends Component {
 
     // Proptypes
     TodoItem.propTypes = {
-        task: PropTypes.object.isRequired
+        todo: PropTypes.object.isRequired
 }
 
 export default TodoItem
