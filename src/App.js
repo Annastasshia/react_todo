@@ -15,7 +15,7 @@ class App extends React.Component {
       {
         id: 2,
         title: 'wash the dishes',
-        completed: false
+        completed: true
       },
       {
         id: 3,
@@ -32,7 +32,7 @@ class App extends React.Component {
         <h1>app</h1>
         
         {/* Taking the "todos" from their main app component state you can pass it to the 'Todos' component below to access it as a property in the component or a 'prop'*/}
-        
+
         <Todos todos={this.state.todos} />
       </div>
     );
