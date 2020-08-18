@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoItem from './TodoItem';
 
 
 
@@ -11,7 +12,10 @@ class Todos extends Component {
     return this.props.todos.map((task) => (
 
         // this is what you will display in the browser
+        <div>
         <h3>{task.title} </h3>
+        <TodoItem />
+        </div>
     ));
   }
 }
