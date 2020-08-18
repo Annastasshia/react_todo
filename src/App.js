@@ -30,6 +30,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>app</h1>
+        
+        {/* Taking the "todos" from their main app component state you can pass it to the 'Todos' component below to access it as a property in the component or a 'prop'*/}
+        
         <Todos todos={this.state.todos} />
       </div>
     );
