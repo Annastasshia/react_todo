@@ -14,7 +14,7 @@ export class TodoItem extends Component {
 
     render() {
 
-        // destructuring allows you to pull out props (properties) so that you can have an easier nameing conventions in your return.
+        // destructuring allows you to pull out props (properties) so that you can have an easier naming conventions in your return instead of having to call this.props.todo every time.
         const { id, title} = this.props.todo;
 
         return (
@@ -23,6 +23,7 @@ export class TodoItem extends Component {
                     {/* When you check the box it looks in your properties list in Todos.js for a "markComplete" method */}
                     <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/> {' '}
                     { title }
+                    <button onClick= {this.props.delTodo.bind(this, id)} style={btnStyle}>x</button>
                 </p>
             </div>
             )
@@ -34,4 +35,14 @@ export class TodoItem extends Component {
         todo: PropTypes.object.isRequired
 }
 
+const btnStyle = {
+    background: '#ff0000',
+    color:'#fff',
+    border: 'none',
+    padding: '5px 9px',
+    borderRadius: '50%',
+    cursor: 'pointer',
+    float: 'right'
+
+}
 export default TodoItem

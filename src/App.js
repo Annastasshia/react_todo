@@ -37,6 +37,11 @@ class App extends React.Component {
     console.log("you have hit the checkbox")
 }
 
+// delete Todo
+delTodo = (id) => {
+  console.log(id)
+}
+
   render() {
     
     return (
@@ -45,7 +50,7 @@ class App extends React.Component {
         
         {/* Taking the "todos" from their main app component state you can pass it to the 'Todos' component below to access it as a property in the component or a 'prop'*/}
 
-        <Todos todos={this.state.todos} markComplete={this.markComplete}/>
+        <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/> 
       </div>
     );
   }
