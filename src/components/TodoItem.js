@@ -43,6 +43,5 @@ const btnStyle = {
     borderRadius: '50%',
     cursor: 'pointer',
     float: 'right'
-
 }
 export default TodoItem

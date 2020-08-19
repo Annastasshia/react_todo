@@ -39,7 +39,7 @@ class App extends React.Component {
 
 // delete Todo
 delTodo = (id) => {
-  console.log(id)
+  this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)]})
 }
 
   render() {
