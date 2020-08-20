@@ -58,7 +58,7 @@ addTodo = (title) => {
   render() {
     
     return (
-      <div className="App">z
+      <div className="App">
         <div className="conatiner">
         <Header />
         <AddTodo addTodo={this.addTodo}/>
