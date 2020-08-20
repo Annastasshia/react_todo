@@ -1,6 +1,6 @@
 import React from 'react';
 import Todos from './components/Todos.js'
-
+import Header from './components/layout/Header.js'
 import './App.css';
 
 
@@ -47,7 +47,7 @@ delTodo = (id) => {
     return (
       <div className="App">
         <h1>app</h1>
-        
+        <Header />
         {/* Taking the "todos" from their main app component state you can pass it to the 'Todos' component below to access it as a property in the component or a 'prop'*/}
 
         <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/> 
