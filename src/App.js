@@ -2,6 +2,8 @@ import React from 'react';
 import Todos from './components/Todos.js'
 import Header from './components/layout/Header.js'
 import AddTodo from './components/AddTodo.js'
+import { v4 as uuidv4 } from 'uuid';
+
 import './App.css';
 
 
@@ -9,17 +11,17 @@ class App extends React.Component {
   state = {
     todos: [
       {
-        id: 1,
+        id: uuidv4(),
         title: 'laundry',
         completed: false
       },
       {
-        id: 2,
+        id: uuidv4(),
         title: 'wash the dishes',
         completed: true
       },
       {
-        id: 3,
+        id: uuidv4(),
         title: 'Vacuum',
         completed: false
       }
@@ -43,13 +45,23 @@ delTodo = (id) => {
   this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)]})
 }
 
+// Add Todo
+addTodo = (title) => {
+  const newTodo = {
+    id: uuidv4(),
+    title: title,
+    completed: false
+  }
+  this.setState({ todos: [...this.state.todos, newTodo]})
+}
+
   render() {
     
     return (
-      <div className="App">
+      <div className="App">z
         <div className="conatiner">
         <Header />
-        <AddTodo />
+        <AddTodo addTodo={this.addTodo}/>
         {/* Taking the "todos" from their main app component state you can pass it to the 'Todos' component below to access it as a property in the component or a 'prop'*/}
 
         <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/> 
